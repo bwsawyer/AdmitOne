@@ -37,7 +37,7 @@ public class APIController {
      * @param eventId id of the desired event
      * @param numTickets number of tickets to purchase
      */
-    @RequestMapping(value="/{username}/purchase/{eventId}", method= RequestMethod.PUT)
+    @RequestMapping(value="/{username}/purchase/{eventId}", method= RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void purchase(@PathVariable String username, @PathVariable int eventId, @RequestBody int numTickets) {
         for(int i = 0; i < numTickets; i++) {
             ticketRepository.save(new Ticket(username, eventId));
@@ -51,7 +51,7 @@ public class APIController {
      * @param eventId id of the event to cancel
      * @param numTickets number of tickets to cancel. Cannot be greater than the number of purchased tickets.
      */
-    @RequestMapping(value="/{username}/cancel/{eventId}", method=RequestMethod.DELETE)
+    @RequestMapping(value="/{username}/cancel/{eventId}", method=RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void cancel(@PathVariable String username, @PathVariable int eventId, @RequestBody int numTickets) {
         Pageable page = new PageRequest(0, numTickets);
         log.info(numTickets + "");
@@ -60,7 +60,6 @@ public class APIController {
         log.info(tickets.size() +"");
 
         if (numTickets > tickets.size()) {
-            log.error("WTF");
             throw new TooManyTicketsException("Number of tickets to cancel exceeds number of tickets in possession for that show");
         }
 

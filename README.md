@@ -5,7 +5,7 @@ This project contains a small sample web application built using Spring Boot and
 It currently uses an embedded data store which is not persisted.  It is seeded at startup with a handful of events and purchased tickets.
 
 ##Server
-To start the server run 
+To start the server run:
     mvn spring-boot:run
 
 The server contains a RESTful API with the following functions:
@@ -19,7 +19,7 @@ The server contains a RESTful API with the following functions:
 These functions do not require authentication.
 
 ##Client
-To start the client enter the client directory and run
+To start the client enter the client directory and run:
     npm start
 
 The client is launched at localhost:3000

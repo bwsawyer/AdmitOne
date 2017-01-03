@@ -1,5 +1,5 @@
 {
-  "name": "hello-world",
+  "name": "admit-one",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -7,7 +7,8 @@
   },
   "dependencies": {
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "axios": "^0.15.3"
   },
   "scripts": {
     "start": "react-scripts start",

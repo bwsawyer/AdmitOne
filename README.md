@@ -20,8 +20,9 @@ The server contains a RESTful API with the following functions:
 These functions do not require authentication.
 
 ##Client
-To start the client enter the client directory and run:
-    
+To build and start the client enter the client directory and run:
+
+    npm install    (only needs to be run once)
     npm start
 
 The client is launched at localhost:3000
